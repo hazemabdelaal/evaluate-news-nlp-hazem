@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Evaluate News NLP Project</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div>
-            Logo
-        </div>
-        <div>
-            Navigation
-        </div>
+      <div>Logo</div>
+      <div>Navigation</div>
     </header>
 
-    <main>
-        <section>
-            <form onsubmit="return Client.analyzeText(event)">
-                <input id="text" type="text" name="inputText" placeholder="Enter text to be analyzed" required>
-                <input type="submit" value="submit" onclick="return Client.analyzeText(event)" onsubmit="return analyzeText(event)">
-            </form>
-        <section>
+    <section class="text-container">
+      <h2 class="text-header">Text Analyzer App</h2>
+      <form onsubmit="return Cient.analyzeText(event)">
+        <input
+          id="text"
+          type="text"
+          placeholder="Enter text to be analyzed"
+          required
+        />
+        <input
+          id="submit"
+          type="submit"
+          value="submit"
+          onclick="return Client.analyzeText(event)"
+          onsubmit="return analyzeText(event)"
+        />
+      </form>
+    </section>
 
-        <section>
-            <strong>Text Results:</strong>
-            <div id="results"></div>
-        </section>
-    </main>
+    <section class="results-container">
+      <h2>Text Results</h2>
+      <div id="results"></div>
+    </section>
 
     <footer>
-        <p>This is a footer</p>
+      <p>This is a footer</p>
     </footer>
 
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js').then(console.log('Service Worker registered')).catch(err => {
-                    console.log(err);
-                })
-            })
-        }
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/service-worker.js')
+            .then(console.log('Service Worker registered'))
+            .catch(err => {
+              console.error(err);
+            });
+        });
+      }
     </script>
-</body>
+  </body>
 </html>

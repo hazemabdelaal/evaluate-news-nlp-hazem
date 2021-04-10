@@ -1,12 +1,68 @@
-form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+// $primary-color: rgb(221, 221, 221);
+// $secondary-color: rgb(36, 36, 36);
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-size: 3rem;
+  }
 }
 
-input {
-    padding: 5px 20px;
+.text-container {
+  border: 0.1rem solid rgb(36, 36, 36);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30vh;
+  width: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+
+  #text {
+    padding: 1rem;
     width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgb(36, 36, 36);
+  }
+
+  #submit {
+    margin: 1rem auto;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgb(36, 36, 36);
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s ease;
+
+    &:hover {
+      background-color: rgb(36, 36, 36);
+      color: rgb(221, 221, 221);
+    }
+  }
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  #results {
+    font-size: 1.8rem;
+  }
 }
